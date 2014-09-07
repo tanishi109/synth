@@ -1,0 +1,6 @@
+textarea(ng-model="newSchedule")
+button(ng-click="publish()", ng-disabled="newSchedule.length == 0") Publish
+ul.schedule-timeline
+  li.schedule(ng-repeat="schedule in schedules", tinder-card)
+    .content {{ schedule.content}}
+    .date {{ schedule.created_at | date:'medium' }}
